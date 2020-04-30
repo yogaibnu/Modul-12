@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './BlogPost.css';
 import Post from "../../component/BlogPost/Post";
-import API from "../../services";
+//import API from "../../services";
 import firebase from "firebase";
 import firebaseConfig from "../../firebase/config";
 
@@ -49,7 +49,7 @@ class BlogPost extends Component{
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevState !== this.this.state) {
+        if (prevState !== this.state) {
             this.simpanDataKeServerAPI();
         }
     }
@@ -112,7 +112,7 @@ class BlogPost extends Component{
                     <div className="form-group row">
                         <label htmlFor="title" className="col-sm-2 col-form-label">Judul</label>
                         <div className="col-sm-10">
-                            <input type="text" className="form-control" id="title" name="title" onChange={this.handleTambahArtikel}/>
+                            <input type="text" className="form-control" name="title" id="title" ref="judulArtikel"/>
                         </div>
                     </div>
                     <div className="form-group row">
